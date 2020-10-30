@@ -62,8 +62,8 @@ Promise.all([
     faceapi.nets.tinyFaceDetector.loadFromUri('/assets/lib/face-api/models'),
     faceapi.nets.faceLandmark68Net.loadFromUri('/assets/lib/face-api/models'),
     faceapi.nets.faceRecognitionNet.loadFromUri('/assets/lib/face-api/models'),
-    faceapi.nets.faceExpressionNet.loadFromUri('/assets/lib/face-api/models'),
-    faceapi.nets.ageGenderNet.loadFromUri('/assets/lib/face-api/models'),
+    //faceapi.nets.faceExpressionNet.loadFromUri('/assets/lib/face-api/models'),
+    //faceapi.nets.ageGenderNet.loadFromUri('/assets/lib/face-api/models'),
     faceapi.nets.ssdMobilenetv1.loadFromUri('/assets/lib/face-api/models'),
 ]).then(startVideo)
 
@@ -83,8 +83,8 @@ cam.addEventListener('play', async () => {
                 new faceapi.TinyFaceDetectorOptions()
             )
             .withFaceLandmarks()
-            .withFaceExpressions()
-            .withAgeAndGender()
+           // .withFaceExpressions()
+           // .withAgeAndGender()
             .withFaceDescriptors()
         const resizedDetections = faceapi.resizeResults(detections, canvasSize)
         const faceMatcher = new faceapi.FaceMatcher(labels,0.6)
