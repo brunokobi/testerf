@@ -118,27 +118,13 @@ cam.addEventListener('play', async () => {
                  registro.data = data;
                  registro.local= 'campo';
 
-                 
-
-                 fetch('http://localhost:3333/registros', {
-                     method: 'POST',
-                     headers: {
-                     'Content-Type': 'application/json',
-                     },
-                     body: JSON.stringify(registro),
-                 })
-                 .then((response) => response.json())
-                 .then((data) => {
-                     console.log('Success:', data);                                      
+                                                        
                             span.innerHTML = 'Presence Now  =>  Matrícula : '+registro.matricula;
                             document.getElementById("teste").style.visibility = "visible";
                             setTimeout(() => {                                
                                 document.getElementById("teste").style.visibility = "hidden";
                             },3000);
-                 })
-                 .catch((error) => {
-                     console.error('Error:', error);
-                 });
+                
             }          
            
             
