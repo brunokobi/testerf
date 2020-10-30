@@ -119,11 +119,15 @@ cam.addEventListener('play', async () => {
                  registro.local= 'campo';
 
                                                         
-                            span.innerHTML = 'Presence Now  =>  Matrícula : '+registro.matricula;
-                            document.getElementById("teste").style.visibility = "visible";
-                            setTimeout(() => {                                
-                                document.getElementById("teste").style.visibility = "hidden";
-                            },3000);
+                 span.innerHTML = 'Presence Now  =>  Matrícula : '+registro.matricula;
+                 document.getElementById("teste").style.visibility = "visible";
+                 cam.style.backgroundColor='green';
+                 cam.style.borderColor='green';                            
+                 setTimeout(() => {                                
+                     document.getElementById("teste").style.visibility = "hidden";
+                     cam.style.backgroundColor='#0053c7';
+                     cam.style.borderColor='#fff';                                
+                 },3000);
                 
             }          
            
