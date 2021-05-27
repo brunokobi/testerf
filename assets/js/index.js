@@ -40,7 +40,7 @@ function startVideo() {
   const loadLabels = () => {
     // const labels = ['Matheus Castiglioni','Lucas Barbosa','Bruno Kobi','Rafaela Kobi']
 
-    const labels = ['6917100903','6916200116','Lucas','Professor Romulo','Professor Marcelo','Michele','Will','Carol','Augusto']
+    const labels = ['6917100903','6916200116','Lucas','Professor Romulo','Professor Marcelo','Michele','Will','Carol','Augusto','Marcio']
     return Promise.all(labels.map(async label => {
         const descriptions = []
         for (let i = 1; i <= 1; i++) {
@@ -134,7 +134,7 @@ cam.addEventListener('play', async () => {
             
 
             new faceapi.draw.DrawTextField([
-                `${label} `
+                `${label} = ${distance *100}`
             ], box.bottomLeft).draw(canvas)
         })
     }, 100)
