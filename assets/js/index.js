@@ -40,7 +40,7 @@ function startVideo() {
   const loadLabels = () => {
     // const labels = ['Matheus Castiglioni','Lucas Barbosa','Bruno Kobi','Rafaela Kobi']
 
-    const labels = ['6917100903','6916200116','Lucas','Professor Romulo','Professor Marcelo','Michele','Will','Carol','Augusto','Marcio']
+    const labels = ['Bruno','Lucas','Cloves','Gabriel','Rafaella','Luiza']
     return Promise.all(labels.map(async label => {
         const descriptions = []
         for (let i = 1; i <= 1; i++) {
