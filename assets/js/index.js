@@ -40,7 +40,7 @@ function startVideo() {
   const loadLabels = () => {
     // const labels = ['Matheus Castiglioni','Lucas Barbosa','Bruno Kobi','Rafaela Kobi']
 
-    const labels = ['Bruno','Lucas','Cloves','Gabriel','Rafaella','Luiza']
+    const labels = ['Gebara','Emilio','Cloves']
     return Promise.all(labels.map(async label => {
         const descriptions = []
         for (let i = 1; i <= 1; i++) {
@@ -82,9 +82,7 @@ cam.addEventListener('play', async () => {
                 cam,
                 new faceapi.TinyFaceDetectorOptions()
             )
-            .withFaceLandmarks()
-           // .withFaceExpressions()
-           // .withAgeAndGender()
+            .withFaceLandmarks()         
             .withFaceDescriptors()
         const resizedDetections = faceapi.resizeResults(detections, canvasSize)
         const faceMatcher = new faceapi.FaceMatcher(labels,0.6)
@@ -93,15 +91,7 @@ cam.addEventListener('play', async () => {
         )
         canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
         faceapi.draw.drawDetections(canvas, resizedDetections)
-      // faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
-       // faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
-        // resizedDetections.forEach(detection => {
-        //     const { age, gender, genderProbability } = detection           
-        //     new faceapi.draw.DrawTextField([
-        //         `${parseInt(age, 10)} anos`,
-        //         `${gender=="male"?"homem":"mulher"} `
-        //     ], detection.detection.box.topRight).draw(canvas)
-        // })
+      
         results.forEach((result, index) => {
             const box = resizedDetections[index].detection.box
             const { label, distance } = result
@@ -110,15 +100,10 @@ cam.addEventListener('play', async () => {
             const cont = 0.00;
             
             if (distance * 100 > 50 && this.nome!=label&&label!='unknown'){ 
-                 this.nome = label;
-                 console.log(this.nome);
-                 console.log(data);
-                 console.log(distance * 100); 
+                 this.nome = label;                 
                  registro.matricula = this.nome;
                  registro.data = data;
-                 registro.local= 'campo';
-
-                                                        
+                 registro.local= 'campo';                                                        
                  span.innerHTML = 'Presence Now  =>  Matrícula : '+registro.matricula;
                  document.getElementById("teste").style.visibility = "visible";
                  cam.style.backgroundColor='green';
